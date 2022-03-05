@@ -39,6 +39,7 @@ def cytosine_guanine_graphic(c_graph_data,g_graph_data, a_graph_data, t_graph_da
     for i in range(0,len(t_graph_data)):
         t_bars_data = np.append(t_bars_data,t_graph_data[i]-ref_perc)
 
+
     plt.subplot(3,2,1)
     plt.scatter(x_axis, c_graph_data)
     plt.axhline(y=ref_perc, color='r', linestyle='-')
@@ -94,14 +95,15 @@ def cytosine_guanine_graphic(c_graph_data,g_graph_data, a_graph_data, t_graph_da
     plt.grid()
     plt.plot()
 
+    plt.suptitle("Yersinia_pestis")
     plt.show()
 
 
 def main():
-    #filename = "E_coli.txt"
-    #filename = "Vibrio_cholerae.txt"
-    filename = "Escherichia_coli.txt"
-    #filename = "Yersinia_pestis.txt"
+    #filename = "Datasets/E_coli.txt"
+    #filename = "Datasets/Vibrio_cholerae.txt"
+    #filename = "Datasets/Escherichia_coli.txt"
+    filename = "Datasets/Yersinia_pestis.txt"
     with open(filename, 'r') as file:
         data = file.read()
 

@@ -1,29 +1,34 @@
-def most_frequent():
-    filename = "Vibrio_cholerae.txt"
-    #filename = "E_coli.txt"
+import numpy as np
+import time
 
-    with open(filename, 'r') as file:
-        data = file.read()    
-
-    window = 9
+def k_mers(dna,k):
     words = {}
-    sorted_words = {}
-    print(len(data))
-
-    for i in range(0,len(data)-window+1):
-        word = data[i:i+window]
+    for i in range(0,len(dna)-k+1):
+        word = dna[i:i+k]
         cond = word in words
         if cond==False:
-            words[word]=1
-        elif cond==True:
-            words[word]+=1
+            words[word]=0
+    return words
 
-    sorted_words = dict(sorted(words.items(), key=lambda item: item[1]))
-    print(sorted_words)
+
+def FrequentWordsWithMismatches(text, k, d):
+    patterns = np.array([])
+    n = len(text)
+
+    for i in range(0,n-k):
+        pass
 
 
 def main():
-    most_frequent()
+    #filename = "Datasets/dataset_9_9.txt"
+    filename = "Datasets/E_coli.txt"
+    with open(filename, 'r') as file:
+        dna = file.read()
+    k = 3
+    d = 2
+
+    neighbors = k_mers(dna,k)
+    print(neighbors)
 
 if __name__ == "__main__":
     main()
