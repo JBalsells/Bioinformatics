@@ -1,4 +1,4 @@
-filename = "dataset_3_2.txt"
+filename = "Datasets/dataset_3_2.txt"
 
 with open(filename, 'r') as file:
     data = file.read()

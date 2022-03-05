@@ -25,7 +25,7 @@ def most_frequent(adn, window):
     return(dict(sorted(words.items(), key=lambda item: item[1])))
 
 if __name__=="__main__":
-    filename = "dataset_4_5.txt"
+    filename = "Datasets/dataset_4_5.txt"
     with open(filename, 'r') as file:
         data = file.read()
     #data = "CGGACTCGACAGATGTGAAGAACGACAATGTGAAGACTCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA"

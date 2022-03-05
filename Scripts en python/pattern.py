@@ -12,7 +12,7 @@ def PatternCount(text, pattern):
 
 if __name__ == "__main__":
 
-    filename = "Vibrio_cholerae.txt"
+    filename = "Datasets/Vibrio_cholerae.txt"
     #filename = "dataset_2_6.txt"
     with open(filename, 'r') as file:
         data = file.read()

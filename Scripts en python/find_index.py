@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-#filename = "dataset_3_5.txt"
+#filename = "Datasets/dataset_3_5.txt"
 #substring = "AACTGAAAA"
-filename = "Vibrio_cholerae1.txt"
+filename = "Datasets/Vibrio_cholerae1.txt"
 substring = "CTTTCACTT"
 #substring = "CTTGATCAT"
 

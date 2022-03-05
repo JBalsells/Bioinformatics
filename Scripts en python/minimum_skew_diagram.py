@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-filename = "dataset_7_10.txt"
+filename = "Datasets/dataset_7_10.txt"
 with open(filename, 'r') as file:
     data = file.read()
 

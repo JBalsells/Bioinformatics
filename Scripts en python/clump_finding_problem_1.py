@@ -16,7 +16,7 @@ def FindClumps(text, k, L, t):
     return np.unique(out, return_counts=True)
 
 if __name__=="__main__":
-    filename = "dataset_4_5.txt"
+    filename = "Datasets/dataset_4_5.txt"
     with open(filename, 'r') as file:
         data = file.read()
     print(FindClumps(data,8,26,3))

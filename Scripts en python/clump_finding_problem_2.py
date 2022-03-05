@@ -17,7 +17,7 @@ def most_frequent(adn, window):
 
 if __name__=="__main__":
     #filename = "dataset_4_5.txt"
-    filename = "E_coli.txt"
+    filename = "Datasets/E_coli.txt"
     with open(filename, 'r') as file:
         data = file.read()
     
@@ -36,4 +36,4 @@ if __name__=="__main__":
                 clumps.add(word_key)
                 print(len(clumps))
     for cl in clumps:
-        print(len(cl))
+        print(len(cl)) 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-filename = "EdgarAllanPoe.txt"
+filename = "Datasets/EdgarAllanPoe.txt"
 with open(filename, 'r') as file:
     #data = file.read()
     for line in file:

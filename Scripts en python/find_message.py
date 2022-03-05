@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-filename = "Vibrio_cholerae.txt"
+filename = "Datasets/Vibrio_cholerae.txt"
 with open(filename, 'r') as file:
     data = file.read()
     

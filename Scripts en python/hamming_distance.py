@@ -14,13 +14,11 @@ def nucleotide_hamming_distance(DNA):
     else:
         return "dna strands are of different dimensions"
 
-def pattern_hamming_distance(DNA):
-
 if __name__ == "__main__":
 
     DNA = np.array([])
 
-    filename = "dataset_9_3.txt"
+    filename = "Datasets/dataset_9_3.txt"
     with open(filename, 'r') as file:
         for line in file:
             DNA = np.append(DNA,line)

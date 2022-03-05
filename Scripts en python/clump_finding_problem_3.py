@@ -1,7 +1,7 @@
 import time
 
 def main():
-    filename = "E_coli.txt"
+    filename = "Datasets/E_coli.txt"
     with open(filename, 'r') as file:
         inputString = file.read()
 

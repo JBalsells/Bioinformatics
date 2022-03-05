@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 from Bio import SeqIO
 
-Data = SeqIO.parse("P0C6X7.fasta", "fasta")
+Data = SeqIO.parse("Datasets/P0C6X7.fasta", "fasta")
 
 for DataSeq in Data:
 	Ac = DataSeq.seq.count('A')
