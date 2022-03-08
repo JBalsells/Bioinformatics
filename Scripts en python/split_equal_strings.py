@@ -100,13 +100,14 @@ def cytosine_guanine_graphic(c_graph_data,g_graph_data, a_graph_data, t_graph_da
 
 
 def main():
-    #filename = "Datasets/E_coli.txt"
+    filename = "Datasets/E_coli.txt"
     #filename = "Datasets/Vibrio_cholerae.txt"
     #filename = "Datasets/Escherichia_coli.txt"
-    filename = "Datasets/Yersinia_pestis.txt"
+    #filename = "Datasets/Yersinia_pestis.txt"
     with open(filename, 'r') as file:
         data = file.read()
 
+    print(len(data))
     substrings = 500
     split_data = split_equal_strings(data,substrings)
     c_split_percent, x_axis = percentage_analysis(split_data, "C")

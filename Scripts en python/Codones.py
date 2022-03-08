@@ -218,7 +218,7 @@ Codons = {
 	'GGG':Amino['Gly'],
 	}
 
-DNAChain = input('Ingrese cadena de ADN: \n')
+DNAChain = input('Ingrese cadena: \n')
 
 DNAChain = "".join(re.findall("[cgatuCGATU]", DNAChain)) #""/join, tupla a string, findall Expresiones regulares
 

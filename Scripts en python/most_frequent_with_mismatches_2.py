@@ -14,13 +14,10 @@ def FrequentWordsWithMismatches(Genome, k, d):
         for kmer in curr_kmer_and_neighbors:
             frequencies[kmer] += 1 
 
-    for kmer in frequencies:
-        if frequencies[kmer] == max(frequencies.values()):
-            aprox_frq_words.append(kmer)
     end = time.process_time()
 
     print("Time:", end - start)
-    return aprox_frq_words, frequencies
+    return frequencies
 
 def PermuteMotifOnce(motif, alphabet={"A", "C", "G", "T"}):
     """
@@ -39,8 +36,27 @@ def PermuteMotifDistanceTimes(motif, d):
         workingSet = set(itertools.chain.from_iterable(map(PermuteMotifOnce, workingSet)))
     return list(workingSet)
 
-def MaximizingSum(dna,patterns,frequencies):
-    pass      
+def MaximizingSum(frequencies):
+    frequent_and_reverse = defaultdict(lambda: 0)
+    for key in frequencies:
+        inverse_key = ComplementaryStrand(key)
+
+        inv_value=0
+        inv_key=""
+        if(inverse_key in frequencies):
+            inv_value = frequencies[inverse_key]
+            inv_key = inverse_key
+
+        sum = frequencies[key] + inv_value
+        
+        far_key_1 = key + " " + inv_key
+        far_key_2 = inv_key + " " + key
+
+        if(not far_key_1 in frequent_and_reverse):
+            if(not far_key_2 in frequent_and_reverse):
+                frequent_and_reverse[far_key_1] = sum
+    return dict(sorted(frequent_and_reverse.items(), key=lambda item: item[1]))
+
 
 def ComplementaryStrand(pattern):
     reversed = ""
@@ -65,13 +81,14 @@ if __name__ == "__main__":
 
     with open(filename, 'r') as file:
         dna = file.read()
-    k = 6
-    d = 3
+    k = 7
+    d = 2
 
-    dna = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
-    k = 4
-    d = 1
+    #dna = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
+    #k = 4
+    #d = 1
 
-    patterns, frequencies = FrequentWordsWithMismatches(dna,k,d)
+    frequencies = FrequentWordsWithMismatches(dna,k,d)
     #print(dict(sorted(frequencies.items(), key=lambda item: item[1])))
-    print(frequencies)
+
+    print(MaximizingSum(frequencies))

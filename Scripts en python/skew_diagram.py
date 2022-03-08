@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 #filename = "E_coli.txt"
 #filename = "Vibrio_cholerae.txt"
-filename = "Escherichia_coli.txt"
+filename = "Datasets/Escherichia_coli.txt"
 #filename = "Yersinia_pestis.txt"
 with open(filename, 'r') as file:
     data = file.read()
@@ -16,9 +16,9 @@ skew_array = np.array([0])
 for i in range(1,len(data)+1):
     latest = len(skew_array)-1
 
-    if(data[i-1]=="C"):
+    if(data[i-1]=="C" or data[i-1]=="c"):
         val = -1
-    elif(data[i-1]=="G"):
+    elif(data[i-1]=="G" or data[i-1=="g"]):
         val = 1
     else:
         val = 0
