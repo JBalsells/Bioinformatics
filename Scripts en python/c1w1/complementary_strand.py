@@ -3,6 +3,8 @@ filename = "../Datasets/dataset_3_2.txt"
 with open(filename, 'r') as file:
     data = file.read()
 
+data = "AGCTGTGCGAGCGAGTGTGCAGAGCGTGAGCGTCGAGTGAGCGCGTGA"
+
 reversed = ""
 index = len(data)-1
 

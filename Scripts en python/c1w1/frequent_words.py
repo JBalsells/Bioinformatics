@@ -1,13 +1,13 @@
-#filename = "../Datasets/Vibrio_cholerae.txt"
+filename = "../Datasets/Vibrio_cholerae.txt"
 #filename = "E_coli.txt"
-filename = "../Datasets/dataset_2_13.txt"
+#filename = "../Datasets/dataset_2_13.txt"
 #filename = "dataset_3_2.txt"
 
 
 with open(filename, 'r') as file:
     data = file.read()
     
-data = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
+#data = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
 
 window = 4
 
